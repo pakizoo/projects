@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <style>
+    * {
+      font-family: 'Arial', sans-serif;
+      background-color:  rgb(248, 206, 248);;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      background-color: purple;
+      color: #fff;
+      text-align: center;
+      padding: 1em 0;
+    }
+    section {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 1em;
+      background-color: rgb(248, 156, 248);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1em;
+    }
+    .skill {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skill-name {
+      flex-grow: 1;
+    }
+    .proficiency {
+      width: 60px;
+      text-align: center;
+      background-color: #ddd;
+      padding: 0.3em;
+      border-radius: 5px;
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 0.5em;
+      }
+      .proficiency {
+        width: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Skills</h1>
+  </header>
+  <section>
+    <ul>
+      <li class="skill">
+        <span class="skill-name">HTML</span>
+        <span class="proficiency">80%</span>
+      </li>
+      <li class="skill">
+        <span class="skill-name">CSS</span>
+        <span class="proficiency">75%</span>
+      </li>
+      <li class="skill">
+        <span class="skill-name">JavaScript</span>
+        <span class="proficiency">70%</span>
+      </li>
+    </li>
+    <li class="skill">
+      <span class="skill-name">Bootsrap</span>
+      <span class="proficiency">70%</span>
+    </li>
+</li>
+<li class="skill">
+  <span class="skill-name">React Js</span>
+  <span class="proficiency">70%</span>
+</li>
+    </ul>
+  </section>
+</body>
+</html>
