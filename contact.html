@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us page</title>
+    <style>
+
+        * {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;background-color: greenyellow;
+        }
+
+        header {
+            background-color: green;
+            color:black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        button {
+            background-color:green;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            animation: pulse 0.5s infinite;
+
+            
+            
+
+        }
+
+        button:hover {
+            background-color: red;
+        }
+    </style>
+    <title>Contact Us - Food Website</title>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <section>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Contact Us Now</button>
+        </form>
+    </section>
+</body>
+</html>
