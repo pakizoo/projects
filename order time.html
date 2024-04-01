@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Timing</title>
+    <style>
+        * {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;background-color: yellow;color: green;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: green;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;transition: all 0.5s ease;
+            animation: pulse 0.5s infinite;
+
+        }
+   @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+      button:hover{
+        background-color: greenyellow;
+      }
+
+        img{
+            height: 10rem;width: 11rem;
+            border-radius: 50%;margin-top: 30px;
+        }
+        @media screen and (min-width: 600px) {
+            section {
+                max-width: 600px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Select Order Timing</h1>
+        <label for="order-time">Choose delivery time:</label>
+        <select id="order-time">
+            <option value="now">As soon as possible</option>
+            <option value="30">30 minutes from now</option>
+            <option value="60">1 hour from now</option>
+            <option value="90">1.5 hours from now</option>
+            <option value="110">2 hours from now</option>
+            <option value="210">5 hours from now</option>
+            <option value="410">tomorrow</option>
+        </select>
+        <button onclick="submitOrder()">Place Order</button>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz3SCWyz-jUl1paM7C8IOj5BPELhdHCI97Jg&usqp=CAU" alt="Delivery Image">
+    </section>
+
+    <script>
+        function submitOrder() {
+            var selectedTime = document.getElementById('order-time').value;
+            alert('Order placed for ' + selectedTime + ' minutes from now!');
+       
+            
+        }
+    </script>
+</body>
+</html>
