@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            box-sizing: border-box;color: white;
+        }
+        html,body{
+            height: 100%;width: 100%;
+        }
+     .page1{height: 100%;width: 100%;
+        background-color: black;padding: 0 30px;}
+        .page2{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: black;
+        }
+        .nav{
+            height: 100px;
+            width: 100%;
+            border-bottom: 2px solid salmon;
+display: flex;align-items: center;justify-content:space-between ;
+
+
+
+
+        }
+        .nav-part2{
+            display: flex;align-items: center;
+            gap: 50px;
+        }
+        .nav h3{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .nav h4{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .nav h1{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+#container{
+    height: 80%;width: 100%;
+    display: flex;
+}
+#left{
+    height: 100%;width: 50%;
+    padding: 20px;
+    
+}
+#right{
+    height: 100%;width: 50%;
+    padding: 20px;
+}
+#left h1{
+   font-size: 70px;font-weight: 100;
+   line-height: 100px;
+   text-transform: uppercase;
+}
+#left h1 img{
+    height: 70px;width: 70px;
+    border-radius: 50%;
+    object-fit: cover;margin-left: -15px;
+    border: 2px solid black;
+}
+#right img{
+    height: 90%;width: 90%;
+    object-fit: cover;border-radius: 10px;
+}
+.box{
+    height: 200px;width: 300px;
+    border: 3px solid #fff;
+    border-radius: 15px;text-align: center;
+    padding: 30px;
+}
+.box h1{
+    margin-bottom: 20px;font-size: 20px;text-transform: uppercase;
+}
+
+    </style>
+    
+    
+</head>
+<body>
+   <div class="page1">
+    <div class="nav">
+        <h1>coucher</h1>
+        <div class="nav-part2">
+            <h3>services</h3>
+            <h3>cases</h3>
+            <h3>about us</h3>
+        </div>
+        <h4>sighn up</h4>
+    </div>
+    <div id="container">
+        <div id="left">
+            <h1>unlimitde pretendious<span><img src="logo2.jpg" alt=""></span><span><img src="logo2.jpg" alt=""></span><span><img src="logo2.jpg" alt=""></span>ideas</h1>
+        </div>
+        <div id="right">
+            <img src="program2.jpg" alt="">
+        </div>
+    </div>
+   </div>
+   <div class="page2">
+    <div class="box">
+        <h1>creative studio</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem.</p>
+    </div>
+    <div class="box">  <h1>creative studio</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem.</p></div>
+    <div class="box">  <h1>creative studio</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolorem.</p></div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" integrity="sha512-LQQDtPAueBcmGXKdOBcMkrhrtqM7xR2bVrnMtYZ8ImAZhFlIb5xrMqQ6uZviyeSB+4mYj89ta8niiCIQM1Gj0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+   var tl= gsap.timeline()
+   tl.from(".nav",{
+    opacity:0,
+    delay:0.3,
+   })
+    tl.from(".nav h1,.nav h4,.nav h3",{
+        y:-80,
+        opacity:0,
+        duration:0.5,
+        delay:1,
+        stagger:0.3
+    })
+    tl.from("#left h1",{
+        x:-500,
+        opacity:0,
+        duration:0.5
+    })
+    tl.from("#right img",{
+scale:0.5,
+opacity:0,
+duration:0.5
+    })
+    gsap.from(".page2 .box",{
+        scale:0,
+        opacity:0,
+        duration:1,
+        stagger:0.3,
+        scrollTrigger:{
+            trigger:".page2 .box",
+            scroller:"body"
+        }
+    })
+</script>
+</body>
+</html>
