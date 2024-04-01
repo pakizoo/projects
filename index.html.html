@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidcup golf family</title>
+
+     <style>
+        *{padding: 0;
+        margin: 0;color: #fff; 
+    box-sizing: border-box;font-family: 'montserrat';
+}
+    html,body{
+        height: 100%;width: 100%;perspective: 800px;
+    }
+#nav{
+    height: 130px;width: 100%;
+    gap: 50px;
+    display: flex;align-items: center;justify-content: flex-start;padding: 0 150px;
+    position: fixed;z-index: 99;
+}
+#nav h4{text-transform:uppercase;
+}
+#nav img{height: 75px;}
+iframe{position: fixed;height: 100%;width: 100%; z-index: -1;}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.13);
+}
+#page1{
+    height: 100vh;width: 100%;position: relative;display: flex;align-items: center;justify-content: center;
+    flex-direction: column;
+}
+#page1 h1{font-size: 110px;font-weight: 900;position: relative;color: black;
+    -webkit-text-stroke: 1px rgba(24, 173, 91, 0.555);z-index: 10;
+}
+#page2 h2{
+    font-size:35px ;
+}
+#page1 h1::before{
+    content: "eat.drink.play";
+    position: absolute;top: -4px;left: -6px;color: white;
+}
+#page2{
+   mini-height:100vh ;width: 100%;z-index: 10;
+}
+#cursor{
+    height: 20px;width: 20px;border-radius: 50%;background-color: rgb(14, 102, 14);
+    position:fixed ;z-index: 99;
+}
+#blur{
+    height: 400px;width: 400px; background-color: rgba(153, 241, 153, 0.897);border-radius: 50%;position: fixed;
+    filter: blur(70px);z-index: 9;
+}
+#scroller{
+    white-space: nowrap;overflow-y: hidden;overflow-x: auto;position: relative;z-index: 10;
+}
+#scroller::-webkit-scrollbar{display: none;}
+#scroller h4{display: inline-block;position:relative;
+    font-size: 120px;font-family: gilroy;font-weight: 900px;
+    -webkit-text-stroke: 1px rgb(0, 255, 98);color: transparent;transition: all linear 0.4s;
+}
+#scroller-in1{
+    display: inline-block;white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in1{
+    display: inline-block;
+}
+
+@keyframes scroll{
+    from{transform: translateX(0);}
+    to{transform: translateX(-100%);}
+}
+#scroller h4:hover{color: green;}
+#card-container{height: 60vh;display: flex;gap: 70px;z-index: 10;position: relative;
+align-items: center;justify-content: center;}
+.card1{height: 80%;width: 25%;border-radius: 20px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdg12yNQTR7MbPfSVuQqxkoKvjZDlkKqpWsg&usqp=CAU");background-size: cover;
+
+}
+
+.card1:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+
+.card2{height: 80%;width: 25%;border-radius: 20px;
+background-size: cover;background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4YJ-qj8PnPfY9C9F1jpY5m-C2SqFzVceXyw&usqp=CAU");
+}
+
+.card2:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+
+.card3{height: 80%;width: 25%;border-radius: 20px;background-size: cover;
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThC-fdKxZ1jdI6EREkrgCQBNtDOc04WnFVXQ&usqp=CAU");
+}
+
+.card3:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+
+#overlay{height: 100%;width: 100%;background-color: greenyellow;
+padding-top: 80px;opacity: 0;
+transition: all ease 0.5s;
+
+}
+
+#overlay h3{color: black;white-space: nowrap;
+font-size: 20px;text-transform: uppercase;font-weight: 250px;}
+#overlay p{color: black;}
+
+#overlay:hover{opacity: 1;border-radius: 20px;}
+#green{
+    display: flex;justify-content: space-between;align-items: center;background: linear-gradient(to left bottom,greenyellow,rgb(24, 226, 24));line-height: 33px;
+}
+#green h3{
+    text-transform:capitalize;color: black;
+}
+#green img{
+    border-radius: 20px;
+}
+#page3{
+    height: 100vh;width:100%;background-color: black;display: flex;align-items: center;justify-content: center;
+
+}
+#page3>p{
+    font-size: 30px;font-weight: 700px;text-align: center;width: 55%;line-height: 40px;
+}
+
+
+
+</style>
+</head>
+<body>
+    <div id="nav">
+        <img src="data:image/png;base64,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">
+        <h4>golf lessons</h4>
+        <h4>adventure</h4>
+        <h4>coffee shop</h4>
+    </div>
+ <div id="cursor"></div>
+ <div id="blur"></div>
+      <iframe autoplay loop muted width="100%" height="100%" src="https://www.youtube.com/embed/1tQC0I1Bxuo?si=JTN5KGkeYHxjS2S_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>  
+<div id="main">
+    <div id="page1">
+<h1>eat.drink.play</h1>
+<h2>welcome to sidcup family code</h2>
+    </div>
+    <div id="page2">
+        <div id="scroller">
+<div id="scroller-in1">
+    <h4>golf lessons</h4>
+    <h4>adventure golf</h4> 
+    <h4>coffee shop</h4>
+</div>
+<div id="scroller-in1">
+    <h4>golf lessons</h4>
+    <h4>adventure golf</h4> 
+    <h4>coffee shop</h4>
+</div>
+ 
+ <div id="card-container">
+    <div class="card1">
+        <div id="overlay">
+            <h3>topracer range</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur<br> elit. Hic explicabo repellat <br> iusto reprehenderit totam esse assumenda<br>nsectetur repudiandae blanditiis exercite<br>m distinctio sequi, nobis et voluptatem?
+            <br>Saepe commodi mollitia eum vero odit  <br>
+     </p>
+        </div>
+    </div>
+    <div class="card2">
+        <div id="overlay">
+            <h3>adventure golf</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur<br> elit. Hic explicabo repellat <br> iusto reprehenderit totam esse assumenda<br>nsectetur repudiandae blanditiis exercite<br>m distinctio sequi, nobis et voluptatem?
+                <br>Saepe commodi mollitia eum vero odit </p>
+        </div>
+      
+ 
+</div>
+    <div class="card3">
+        <div id="overlay">
+            <h3>golf lessons</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur<br> elit. Hic explicabo repellat <br> iusto reprehenderit totam esse assumenda<br>nsectetur repudiandae blanditiis exercite<br>m distinctio sequi, nobis et voluptatem?
+                <br>Saepe commodi mollitia eum vero odit </p>
+        </div>
+
+    </div>
+ </div>
+
+
+
+ <div id="green">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpBO7frp7Hu1Rxu2MRVd9BbH8c86KKlPrWSWbAVOlve3tzcrsvYDnui-ySauMl6hQar0&usqp=CAU"alt="">
+
+<h3>sighn up for sidcup news and special offers straight to your inbox</h3>
+
+
+
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpBO7frp7Hu1Rxu2MRVd9BbH8c86KKlPrWSWbAVOlve3tzcrsvYDnui-ySauMl6hQar0&usqp=CAU"alt="">
+ </div>
+
+ 
+
+         </div>
+    </div>
+
+<div id="page3">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatem delectus vitae in neque, autem non expedita! Accusantium quod velit saepe deleniti officia natus recusandae alias atque, molestias eligendi adipisci.
+        Cupiditate voluptas a fugit aut autem, mollitia maxime! Accusantium fugit officia assumenda quasi earum? Facere magnam, illum minus, reiciendis illo numquam earum adipisci at aperiam eos voluptates iure sapiente dolorem!</p>
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    gsap.to("#nav",{
+        backgroundColor:"#000",
+        duration:1,
+        scrollTrigger:{trigger:"#nav",
+        scroller:"body",
+        start:"top -10%",
+end:"top -11%",
+scrub:1
+        }
+    })
+
+gsap.to("#main",{
+    backgroundColor:"#000",
+    scrollTrigger:{
+        trigger:"#main",
+        scroller:"body",
+        
+        start:"top -50%",
+        end:"top -100%",
+        scrub:2
+    }
+})
+var crsr=document.querySelector("#cursor")
+var blur=document.querySelector("#blur")
+document.addEventListener("mousemove",function(dets){
+    crsr.style.left=dets.x+"px"
+    crsr.style.top=dets.y+"px"
+    blur.style.left=dets.x-200+"px"
+    blur.style.top=dets.y-200+"px"
+})
+</script>
+</body>
+</html>
